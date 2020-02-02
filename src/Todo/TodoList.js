@@ -1,8 +1,9 @@
 import React, {Component} from 'react'
 import TodoItem from './TodoItem'
 import TodoCreator from './TodoCreator'
+import './TodoList.css'
 
-const EMPTY_LIST_MESSAGE = 'Look\'s like there is no TODO yet. Try to create one'
+const EMPTY_LIST_MESSAGE = 'Look\'s like there is no TODO yet. Try to create one :)'
 
 class TodoList extends Component {
     
@@ -42,10 +43,10 @@ class TodoList extends Component {
         });
         return (
         <>
-            <TodoCreator onCreate={this.handleTodoCreate}/>
-            <ul className="TodoList">
+            <div className="TodoList">
                 {items.length ? items : <p>{EMPTY_LIST_MESSAGE}</p>}
-            </ul>
+            </div>
+            <TodoCreator onCreate={this.handleTodoCreate}/>
         </>
         );
     }

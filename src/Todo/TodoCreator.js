@@ -1,4 +1,5 @@
-import React, {Component} from 'react';
+import React, {Component} from 'react'
+import './TodoCreator.css'
 
 class TodoCreator extends Component {
     constructor () {
@@ -15,16 +16,26 @@ class TodoCreator extends Component {
 
     render() {
         return (
-            <div>
-                <input 
-                 type="text"
-                 value={this.state.text}
-                 onChange={this.handleTextChange}/>
-                 <button
-                 onClick={() => this.props.onCreate({text: this.state.text})}>
-                     Create new todo
-                 </button>
-            </div>
+                <div className="TodoCreator">
+                    <div className="group">      
+                        <input 
+                            type="text" 
+                            required 
+                            value={this.state.text}
+                            onChange={this.handleTextChange}
+                        />
+                        <span className="highlight"></span>
+                        <span className="bar"></span>
+                        <label>Name</label>
+                    </div>
+                    <button 
+                        className="btn" 
+                        type="button"
+                        onClick={() => this.props.onCreate({text: this.state.text})}
+                    >
+                        <span>Create new todo</span>
+                    </button>
+                </div>
         );
     }
 }
