@@ -26,7 +26,7 @@ class TodoCreator extends Component {
                         />
                         <span className="highlight"></span>
                         <span className="bar"></span>
-                        <label>Name</label>
+                        <label>TODO:</label>
                     </div>
                     <button 
                         className="btn" 
