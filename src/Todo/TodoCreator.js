@@ -26,12 +26,12 @@ class TodoCreator extends Component {
                         />
                         <span className="highlight"></span>
                         <span className="bar"></span>
-                        <label>Name</label>
+                        <label>TODO:</label>
                     </div>
                     <button 
                         className="btn" 
                         type="button"
-                        onClick={() => this.props.onCreate({text: this.state.text})}
+                        onClick={() => this.props.onCreate(this.state.text)}
                     >
                         <span>Create new todo</span>
                     </button>

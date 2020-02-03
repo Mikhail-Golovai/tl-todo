@@ -1,21 +1,16 @@
-import React, {Component} from 'react'
+import React from 'react'
 import './TodoItem.css'
 
-class TodoItem extends Component {
-
-    render() {
+export default function TodoItem ({item, onTodoDone}) {
         return (
             <div className="TodoItem">
                 <input 
                  type="checkbox"
-                 id={`todo-${this.props.item.key}`}
+                 id={`todo-${item.key}`}
                  className="css-checkbox"
-                 checked={this.props.item.isDone}
-                 onChange={() => {this.props.onTodoDone(this.props.item.key)}}/>
-                 <label for={`todo-${this.props.item.key}`} class="css-label">{this.props.item.text}</label>
+                 checked={item.isDone}
+                 onChange={onTodoDone}/>
+                 <label htmlFor={`todo-${item.key}`} className="css-label">{item.text}</label>
             </div>
-        );
-    }
+        )
 }
-
-export default TodoItem;
